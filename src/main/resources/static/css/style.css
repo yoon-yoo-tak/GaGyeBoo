@@ -1,0 +1,234 @@
+body, input, select, table, textarea {
+    font-family: -apple-system,BlinkMacSystemFont,AppleSDGothicNeo,Helvetica,Malgun Gothic,Dotum,sans-serif;
+    font-size: 14px;
+    line-height: 1.25em;
+}
+body, button, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, table, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+.back {
+    background-color: black;
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 15px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.header{
+    width: 225px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 10100;
+    background-color: #000;
+    border-right: 1px solid hsla(0, 0%, 100%, .1);
+}
+.header .link_logo{
+    display: inline-block;
+    vertical-align: top;
+    color: whitesmoke;
+    margin-left: 20px;
+}
+/* .blind {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+} */
+.header .link_logo:after {
+    background-position: -126px -321px;
+    width: 114px;
+    height: 20px;
+    display: block;
+    margin: 27px 10px 26px 24px;
+    content: "";
+    border: 1px white;
+}
+
+.header .my_menu {
+    position: absolute;
+    top: 73px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 16px 0 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.header .profile_area{
+    width: 177px;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-width: 1px 0;
+}
+
+.header .link_login {
+    display: block;
+    font-size: 15px;
+    padding: 11px 0;
+    line-height: 19px;
+    color: #999;
+}
+/* .header .link_login:before {
+    background-position: -594px -168px;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 6px;
+    border-radius: 50%;
+    content: "";
+    background-image: url(/img/us.jpeg);
+} */
+.header .link_login .text, .header .link_login:before {
+    display: inline-block;
+    vertical-align: middle;
+}
+.header .search_area {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 4px;
+    width: 177px;
+    margin-left: 30px;
+}
+.header .input_area {
+    position: relative;
+    display: block;
+}
+.header .input_search {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    padding: 10px 36px 10px 44px;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    color: #fff;
+    transition: background-color .2s ease;
+    caret-color: #ff0050;
+    appearance: none;
+}
+.header .icon_search {
+    background-position: -452px -512px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 13px;
+}
+.header .ly_menu {
+    width: 177px;
+}
+.ly_menu .menu_list{
+    margin: 24px 0;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none;
+}
+.ly_menu .link_menu {
+    display: block;
+    height: 24px;
+    padding: 6px;
+}
+/* .ly_menu .link_menu {
+    background-position: -368px -512px;
+    width: 20px;
+    height: 20px;
+} */
+#menu_content{
+    color: white;
+    font-size: large;
+}
+
+.box {
+    margin-left: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+.usimg {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.content{
+    padding-left: 225px;
+    border: 1px solid gold;
+    margin: 0;
+    overflow: hidden;
+}
+
+.bar{
+    float: left;
+    width: 20%;
+    height: 300px;
+    border: 1px solid black;
+}
+.bar2{
+    float: left;
+    width: 20%;
+    height: 300px;
+    border: 1px solid black;
+}
+.bar3{
+    float: left;
+    width: 20%;
+    height: 300px;
+    border: 1px solid black;
+}
+.bar4{
+    float: left;
+    width: 20%;
+    height: 300px;
+    border: 1px solid black;
+}
+.bar5{
+    float: left;
+    width: 19%;
+    height: 300px;
+    border: 1px solid black;
+}
+.top-section{
+    border: 1px solid black;
+    height: 50px;
+}
+.board{
+    display: flex;
+    float: left;
+    width: 100%;
+    border: red 2px solid;
+    height: 100px;
+}
