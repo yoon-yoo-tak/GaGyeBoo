@@ -5,25 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>Single Page</title>
     <!-- 제이쿼리 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" type="text/javascript"></script>
     <!-- chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <link href='/calendar/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
-    <script src='/calendar/fullcalendar-5.10.2/lib/main.js'></script>
+    <link href='../static/calendar/fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
+    <script src='../static/calendar/fullcalendar-5.10.2/lib/main.js'></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 <header class="header">
-    <h1 class="logo">
+    <h2 class="logo">
         <a href="/" class="link_logo">
             우리의 가계부
         </a>
-    </h1>
+    </h2>
     <div class="box" style="background: #BDBDBD;">
-        <img class="usimg" src="/img/us.jpeg">
+        <img class="usimg" src="../static/img/us.jpg">
     </div>
     <div class="my_menu">
         <div class="profile_area">
@@ -65,9 +74,15 @@
     </div>
 </header>
 <div class="content">
-    <div class="top-section">something</div>
+    <div class="top-section">사용 내역 > 월별 사용 내역</div>
     <div class="bar">
-        <span>something else</span>
+        <span>2022-03-02 기준</span>
+        <hr>
+        <span>총 입금 금액 : xxxx 원</span>
+        <hr>
+        <span>총 사용 금액 : xxxx 원</span>
+        <hr>
+        <span>남은 금액 : xxxx 원</span>
     </div>
     <div class="bar2">
         <canvas id="myChart" width="100%" height="100%"></canvas>
@@ -81,13 +96,101 @@
     <div id="calendar">
 
     </div>
-    <div class="board">
-
-        <span>게시판영역</span>
+    <div class="board table-responsive clearfix">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>지출 금액</th>
+                    <th>목적</th>
+                    <th>내용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        asdsad
+                    </td>
+                    <td>asd</td>
+                    <td>1</td>
+                    <td>2</td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        asdsad
+                    </td>
+                    <td>asd</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>
+                        asdsad
+                    </td>
+                    <td>asd</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>
+                        asdsad
+                    </td>
+                    <td>asd</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>
+                        asdsad
+                    </td>
+                    <td>asd</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btn_wrap text-right" id="enroll_btn">
+        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@minzi">등록</button> 
     </div>
 </div>
-<div class="board_area">
-</div>
+
+<!-- 등록 모달  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">새로 등록하기</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">날짜</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">소비금액</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">소비처</label>
+                <input type="text" class="form-control">
+              </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">메모:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+          <button type="button" class="btn btn-primary">등록</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 <script>
@@ -104,11 +207,11 @@ var myChart = new Chart(chartArea, {
         // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
         datasets: [{
             // ⑤dataset의 이름(String)
-            label: '# of Votes',
+            label: '1월사용평균',
             // ⑥dataset값(Array)
-            data: [12, 19, 3, 5, 2, 3],
+            data: [30000, 35000, 23000, 50000, 60000, 70000],
             // ⑦dataset의 배경색(rgba값을 String으로 표현)
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            backgroundColor: 'rgba(255, 255, 132, 0.2)',
             // ⑧dataset의 선 색(rgba값을 String으로 표현)
             borderColor: 'rgba(255, 99, 132, 1)',
             // ⑨dataset의 선 두께(Number)
@@ -131,7 +234,7 @@ var chartArea = document.getElementById('myChart1').getContext('2d');
 // 차트를 생성한다.
 var myChart = new Chart(chartArea, {
     // ①차트의 종류(String)
-    type: 'bar',
+    type: 'doughnut',
     // ②차트의 데이터(Object)
     data: {
         // ③x축에 들어갈 이름들(Array)
@@ -139,11 +242,11 @@ var myChart = new Chart(chartArea, {
         // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
         datasets: [{
             // ⑤dataset의 이름(String)
-            label: '# of Votes',
+            label: '배민 사용 내역',
             // ⑥dataset값(Array)
             data: [12, 19, 3, 5, 2, 3],
             // ⑦dataset의 배경색(rgba값을 String으로 표현)
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            backgroundColor: 'rgba(255, 99, 255, 0.2)',
             // ⑧dataset의 선 색(rgba값을 String으로 표현)
             borderColor: 'rgba(255, 99, 132, 1)',
             // ⑨dataset의 선 두께(Number)
@@ -166,19 +269,19 @@ var chartArea = document.getElementById('myChart2').getContext('2d');
 // 차트를 생성한다.
 var myChart = new Chart(chartArea, {
     // ①차트의 종류(String)
-    type: 'bar',
+    type: 'line',
     // ②차트의 데이터(Object)
     data: {
         // ③x축에 들어갈 이름들(Array)
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','color'],
         // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
         datasets: [{
             // ⑤dataset의 이름(String)
-            label: '# of Votes',
+            label: '카페 사용 내역',
             // ⑥dataset값(Array)
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5, 2, 3,35],
             // ⑦dataset의 배경색(rgba값을 String으로 표현)
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            backgroundColor: 'rgba(0, 99, 132, 0.2)',
             // ⑧dataset의 선 색(rgba값을 String으로 표현)
             borderColor: 'rgba(255, 99, 132, 1)',
             // ⑨dataset의 선 두께(Number)
@@ -205,6 +308,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         calendar.render();
       });
+
+      $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        //var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        
+      })
+      
 </script>
 
 </html>
