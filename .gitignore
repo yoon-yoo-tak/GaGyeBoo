@@ -37,3 +37,4 @@ out/
 .vscode/
 .idea/
 fullcalendar-5.10.2\
+application.properties
