@@ -38,3 +38,6 @@ out/
 .idea/
 fullcalendar-5.10.2\
 application.properties
+application.properties
+fullcalendar-5.10.2/
+img/

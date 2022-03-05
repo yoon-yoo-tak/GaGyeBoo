@@ -7,19 +7,19 @@ var main = {
     },
     save : function () {
         var data = {
-            title: $('#title').val(),
-            author: $('#author').val(),
-            content: $('#content').val()
+            spend: $('#spend').val(),
+            purpose: $('#purpose').val(),
+            memo: $('#message-text').val()
         };
 
         $.ajax({
             type: 'POST',
-            url: '/posts',
+            url: '/record',
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
-            alert('글이 등록되었습니다.');
+            alert('내역이 등록되었습니다.');
             location.reload();
         }).fail(function (error) {
             alert(error);

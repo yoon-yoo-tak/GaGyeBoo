@@ -1,24 +1,27 @@
-package com.our.dto.posts;
+package com.our.dto.records;
 
-
-import com.our.domain.posts.Posts;
+import com.our.domain.records.Record;
 import lombok.Getter;
+import org.joda.time.DateTime;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Getter
-public class PostsMainResponseDto {
-    private Long id;
-    private String title;
-    private String author;
-    private String createdDate;
+public class RecordsMainResponseDto {
 
-    public PostsMainResponseDto(Posts entity){
+    private long id;
+    private String createdDate;
+    private int spend;
+    private String purpose;
+    private String memo;
+
+    public RecordsMainResponseDto(Record entity){
         id = entity.getId();
-        title = entity.getTitle();
-        author = entity.getAuthor();
+        spend = entity.getSpend();
+        purpose = entity.getPurpose();
+        memo = entity.getMemo();
         createdDate = toStringDateTime(entity.getCreatedDate());
     }
 
@@ -28,4 +31,7 @@ public class PostsMainResponseDto {
                 .map(formatter::format)
                 .orElse("");
     }
+
+
+
 }

@@ -1,7 +1,7 @@
 package com.our.domain;
 
 import com.our.domain.records.Record;
-import com.our.domain.records.recordRepository;
+import com.our.domain.records.RecordRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class recordRepositoryTest {
 
     @Autowired
-    recordRepository recordRepository;
+    RecordRepository recordRepository;
 
     @Test
     public void save_load(){
