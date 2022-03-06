@@ -2,7 +2,6 @@ package com.our.dto.records;
 
 import com.our.domain.records.Record;
 import lombok.Getter;
-import org.joda.time.DateTime;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,7 +25,7 @@ public class RecordsMainResponseDto {
     }
 
     private String toStringDateTime(LocalDateTime localDateTime){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return Optional.ofNullable(localDateTime)
                 .map(formatter::format)
                 .orElse("");

@@ -80,7 +80,7 @@
         <hr>
         <span>총 입금 금액 : xxxx 원</span>
         <hr>
-        <span>총 사용 금액 : xxxx 원</span>
+        <span>총 사용 금액 : {{totalSpend}}</span>
         <hr>
         <span>남은 금액 : xxxx 원</span>
     </div>
@@ -108,7 +108,7 @@
             </thead>
             <tbody>
             {{#each record}}
-                <tr>
+                <tr data-toggle="modal" data-target="#infoModal">
                     <td>
                         {{createdDate}}
                     </td>
@@ -158,6 +158,42 @@
       </div>
     </div>
   </div>
+
+    <!-- 정보 보기 모달  -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">보기</h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">날짜</label>
+                <input type="text" class="form-control" value="">
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">소비금액</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">소비처</label>
+                  <input type="text" class="form-control">
+                </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">메모:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-primary">수정</button>
+            <button type="button" class="btn btn-dnager">삭제</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 
@@ -316,6 +352,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var modal = $(this)
         
       })
+
+      $('#infoModal').on('show.bs.modal', function (event) {
+              var button = $(event.relatedTarget) // Button that triggered the modal
+              //var recipient = button.data('whatever') // Extract info from data-* attributes
+              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+              var modal = $(this)
+
+            })
 
 
 </script>

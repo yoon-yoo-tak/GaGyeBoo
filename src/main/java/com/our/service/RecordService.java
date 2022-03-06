@@ -25,4 +25,10 @@ public class RecordService {
     public List<RecordsMainResponseDto> findAllDesc(){
         return recordRepository.findAllDesc().map(RecordsMainResponseDto::new).collect(Collectors.toList());
     }
+
+    @Transactional
+    public int totalSpend(){
+        return recordRepository.totalSpend();
+    }
+
 }

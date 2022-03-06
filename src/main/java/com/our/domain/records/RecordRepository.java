@@ -9,4 +9,7 @@ public interface RecordRepository extends JpaRepository<Record, Long> {
 
     @Query(value = "SELECT * " + "FROM record " + "ORDER BY id DESC", nativeQuery = true)
     Stream<Record> findAllDesc();
+
+    @Query(value = "SELECT SUM(spend) FROM record", nativeQuery = true)
+    int totalSpend();
 }
