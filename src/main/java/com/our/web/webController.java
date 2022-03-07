@@ -18,7 +18,9 @@ public class webController {
     @GetMapping("/")
     public String main(Model model){
         model.addAttribute("record", recordService.findAllDesc());
-        model.addAttribute("totalSpend", recordService.totalSpend());
+        if(recordService.totalSpend() != 0){
+            model.addAttribute("totalSpend", recordService.totalSpend());
+        }
         return "index";
     }
 }

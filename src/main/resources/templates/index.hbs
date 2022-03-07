@@ -109,6 +109,9 @@
             <tbody>
             {{#each record}}
                 <tr data-toggle="modal" data-target="#infoModal">
+                    <td id="id_name">
+                        {{id}}
+                    </td>
                     <td>
                         {{createdDate}}
                     </td>
@@ -167,6 +170,7 @@
             <h5 class="modal-title" id="exampleModalLabel">보기</h5>
           </div>
           <div class="modal-body">
+              <input type="text" value="" id="id_input" name="id">
             <form>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">날짜</label>
@@ -206,6 +210,7 @@ var main = {
         });
     },
     save : function () {
+
         var data = {
             spend: $('#spend').val(),
             purpose: $('#purpose').val(),
@@ -359,7 +364,10 @@ document.addEventListener('DOMContentLoaded', function() {
               // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
               // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
               var modal = $(this)
-
+              var hidden_id = document.getElementById('id_name')
+              var id_val = hidden_id.innerText
+              alert(id_val)
+              modal.find('#id_input').val(id_val)
             })
 
 
